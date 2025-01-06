@@ -17,6 +17,9 @@ sudo apt-get install jenkins -y
 
 # after setup jenkins install these plugins
 # Maven integration
+# Github integration
+# Nexus Artifact Uploader
+# Build Timestamp
 # SonarQube Scanner
 # Sonar Quality Gates
 # Slack Notification 

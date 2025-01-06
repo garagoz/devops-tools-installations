@@ -26,7 +26,6 @@ EOF
 sed -i 's/Xms2073m/Xms1024m/g' /opt/nexus/bin/nexus.vmoptions
 sed -i 's/Xmx2073m/Xmx1024m/g' /opt/nexus/bin/nexus.vmoptions
 sed -i 's/MaxDirectMemorySize=2073m/MaxDirectMemorySize=1024m/g' /opt/nexus/bin/nexus.vmoptions
-# 1930282990
 
 # sudo vim /opt/sonatype-work/nexus3/etc/nexus.properties
 # application-host=127.0.0.1
@@ -52,4 +51,4 @@ sudo systemctl daemon-reload
 sudo systemctl start nexus.service
 sudo systemctl enable nexus.service
 
-# http://IP:8081
+# http://server_IP:8081
