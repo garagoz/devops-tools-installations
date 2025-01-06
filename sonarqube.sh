@@ -39,12 +39,11 @@ sonarqube   -   nofile   65536
 sonarqube   -   nproc    409
 EOF
 
-sudo mkdir -p /opt/sonarqube
-cd /opt/sonarqube
+cd /opt
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.6.1.59531.zip
 sudo apt-get install zip -y
 sudo unzip -o sonarqube-9.6.1.59531.zip -d /opt/
-sudo mv /opt/sonarqube-9.6.1.59531/ /opt/sonarqube
+sudo mv sonarqube-9.6.1.59531 sonarqube
 sudo groupadd sonar
 sudo useradd -c "SonarQube - User" -d /opt/sonarqube/ -g sonar sonar
 sudo chown sonar:sonar /opt/sonarqube/ -R

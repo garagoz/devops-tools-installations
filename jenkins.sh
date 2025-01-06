@@ -15,7 +15,8 @@ echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
 sudo apt-get update -y
 sudo apt-get install jenkins -y
 
-# after setup jenkins install these plugins
+#  ---------------------------------------
+# After setup jenkins install these plugins
 # Maven integration
 # Github integration
 # Nexus Artifact Uploader
@@ -23,3 +24,7 @@ sudo apt-get install jenkins -y
 # SonarQube Scanner
 # Sonar Quality Gates
 # Slack Notification 
+
+# jenkins go to Tools
+# add jdk path
+# add maven3

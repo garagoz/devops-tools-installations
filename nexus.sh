@@ -10,12 +10,11 @@ sudo passwd nexus
 #nexus - nofile 65536
 #EOF
 
-mkdir -p /opt/nexus
-cd /opt/nexus
+cd /opt
 wget https://download.sonatype.com/nexus/3/nexus-3.41.1-01-unix.tar.gz
 tar xzfv nexus-3.41.1-01-unix.tar.gz
 
-mv nexus-3.41.1-01 /opt/nexus
+mv nexus-3.41.1-01 nexus
 #mv sonatype-work /opt/
 chown -R nexus:nexus /opt/nexus /opt/sonatype-work
 
