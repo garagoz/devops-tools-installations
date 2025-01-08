@@ -4,7 +4,7 @@ sudo apt update
 sudo apt install openjdk-8-jre-headless wget -y
 
 sudo useradd -d /opt/nexus -s /bin/bash nexus
-sudo passwd nexus
+#sudo passwd nexus
 
 #cat <<EOF > /etc/security/limits.d/nexus.conf
 #nexus - nofile 65536

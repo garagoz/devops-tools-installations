@@ -124,4 +124,6 @@ echo "System reboot in 10 sec"
 sleep 10
 reboot
 
+# -------------------------------
+# Sign in and create access token, choose token type as "User Token"
 

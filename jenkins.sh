@@ -24,6 +24,7 @@ sudo apt-get install jenkins -y
 # SonarQube Scanner
 # Sonar Quality Gates
 # Slack Notification 
+# Config File Provider
 
 # jenkins go to Tools
 # add jdk path
