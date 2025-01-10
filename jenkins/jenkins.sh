@@ -25,6 +25,7 @@ sudo apt-get install jenkins -y
 # Sonar Quality Gates
 # Slack Notification 
 # Config File Provider
+# Eclipse Temurin, need for jdk installation
 
 # jenkins go to Tools
 # add jdk path

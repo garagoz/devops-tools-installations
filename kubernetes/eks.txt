@@ -1,0 +1,1 @@
+https://github.com/kodekloudhub/certified-kubernetes-administrator-course/blob/master/managed-clusters/eks/console/docs/01-sign-in.md
