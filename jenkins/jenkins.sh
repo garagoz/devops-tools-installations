@@ -16,7 +16,7 @@ sudo apt-get update -y
 sudo apt-get install jenkins -y
 
 #  ---------------------------------------
-# After setup jenkins install these plugins
+# Plugins to install
 # Maven integration
 # Github integration
 # Nexus Artifact Uploader
@@ -25,8 +25,13 @@ sudo apt-get install jenkins -y
 # Sonar Quality Gates
 # Slack Notification 
 # Config File Provider
-# Eclipse Temurin, need for jdk installation
+# Eclipse Temurin, needs for easy jdk installation
 
+# if you work with Gitlab
+# GitLab
+# GitLab API
+
+# -------------------------------
 # jenkins go to Tools
 # add jdk path
 # add maven3
