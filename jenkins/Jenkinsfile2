@@ -1,0 +1,89 @@
+pipeline {
+    agent any
+    
+    tools {
+        maven "maven3"
+        jdk "openjdk17"
+    }
+    
+    environment {
+        SCANNER_HOME = tool 'sonar-scanner'
+    }
+
+
+    stages {
+        stage('Git Checkout') {
+            steps {
+                git 'https://github.com/jaiswaladi246/secretsanta-generator.git'
+            }
+        }
+        
+        stage('Compile') {
+            steps {
+                sh 'mvn compile'
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        
+        stage('Sonar Analysis') {
+            steps {
+                script {
+                    withSonarQubeEnv('sonar-server') {
+                    sh '''$SCANNER_HOME/bin/sonar-scanner -Dsonar.projectKey=santa \
+                   -Dsonar.projectName=santa \
+                   -Dsonar.java.binaries=. '''
+                 }
+                }
+            }
+        }
+        
+        stage('OWASP Check') {
+            steps {
+                dependencyCheck additionalArguments: '--scan .', odcInstallation: 'DC'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+        
+        stage('Build Application') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+        
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                    sh 'docker build -t santa:latest .'
+                  }
+                }
+            }
+        }
+        
+        stage('Tag & Push Docker Image') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                    sh 'docker tag santa:latest atorayew/santa:latest'
+                    sh 'docker push atorayew/santa:latest'
+                  }
+                }
+            }
+        }
+        
+        stage('Deploy Application') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                    sh 'docker run -d -p 8081:8080 atorayew/santa:latest'
+                  }
+                }
+            }
+        }
+    }
+}
