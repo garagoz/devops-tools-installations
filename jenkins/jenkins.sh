@@ -24,8 +24,12 @@ sudo apt-get install jenkins -y
 # SonarQube Scanner
 # Sonar Quality Gates
 # Slack Notification 
+# OWASP Dependency check
 # Config File Provider
 # Eclipse Temurin, needs for easy jdk installation
+# Docker
+# Docker Pipeline
+# docker-build-step
 
 # if you work with Gitlab
 # GitLab
@@ -35,3 +39,5 @@ sudo apt-get install jenkins -y
 # jenkins go to Tools
 # add jdk path
 # add maven3
+
+# https://github.com/jaiswaladi246/secretsanta-generator.git
