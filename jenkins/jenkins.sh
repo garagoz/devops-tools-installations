@@ -30,6 +30,10 @@ sudo apt-get install jenkins -y
 # Docker
 # Docker Pipeline
 # docker-build-step
+# --- need for AWS cloud---
+# CloudBees Docker Build and Publish
+# Amazon ECR
+# Pipeline: AWS Steps
 
 # if you work with Gitlab
 # GitLab
