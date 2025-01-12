@@ -58,7 +58,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: 'docker-cred') {
                     sh 'docker build -t santa:latest .'
                   }
                 }
@@ -68,7 +68,7 @@ pipeline {
         stage('Tag & Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: 'docker-cred') {
                     sh 'docker tag santa:latest atorayew/santa:latest'
                     sh 'docker push atorayew/santa:latest'
                   }
@@ -79,7 +79,7 @@ pipeline {
         stage('Deploy Application') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: 'docker-cred') {
                     sh 'docker run -d -p 8081:8080 atorayew/santa:latest'
                   }
                 }
