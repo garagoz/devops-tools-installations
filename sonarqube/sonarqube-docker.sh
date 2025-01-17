@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# first install dockeron your machine
+# first install docker on your machine
 
 # Add Docker's official GPG key:
 sudo apt-get update
@@ -21,5 +21,5 @@ sudo service docker restart
 sudo chmod 666 /var/run/docker.sock
 sudo systemctl restart docker
 
-# run sonar qube
+# run sonarqube with docker
 docker run --name sonarqube -p 9000:9000 -d sonarqube:lts-community
