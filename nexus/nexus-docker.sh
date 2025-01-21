@@ -28,4 +28,4 @@ docker volume create --name nexus-data
 docker run -d -p 8081:8081 --name nexus -v nexus-data:/nexus-data sonatype/nexus3
 
 # get nexus default password
-docker container exec nexus cat nexus-data/admin.password
+# docker exec -it my_container /bin/bash
