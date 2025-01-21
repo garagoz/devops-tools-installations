@@ -22,7 +22,6 @@ sudo apt-get install jenkins -y
 # Nexus Artifact Uploader
 # Build Timestamp
 # SonarQube Scanner
-# Sonar Quality Gates
 # Slack Notification 
 # OWASP Dependency check
 # Config File Provider
@@ -30,6 +29,7 @@ sudo apt-get install jenkins -y
 # Docker
 # Docker Pipeline
 # docker-build-step
+
 # --- need for AWS cloud---
 # CloudBees Docker Build and Publish
 # Amazon ECR
