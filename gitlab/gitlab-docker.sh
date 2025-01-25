@@ -25,20 +25,20 @@ sudo systemctl restart docker
 sudo docker pull gitlab/gitlab-ce:latest
 
 # Create a directory to store GitLab’s configuration and data
-sudo mkdir -p /gitlab/config /gitlab/logs /gitlab/data
+sudo mkdir -p /srv/gitlab/config /srv/gitlab/logs /srv/gitlab/data
 
 sudo docker run --detach \
   --hostname YOUR_SERVER_IP \
   --publish 443:443 --publish 80:80 --publish 22:22 \
   --name gitlab \
   --restart always \
-  --volume /gitlab/config:/etc/gitlab \
-  --volume /gitlab/logs:/var/log/gitlab \
-  --volume /gitlab/data:/var/opt/gitlab \
+  --volume /srv/gitlab/config:/etc/gitlab \
+  --volume /srv/gitlab/logs:/var/log/gitlab \
+  --volume /srv/gitlab/data:/var/opt/gitlab \
   gitlab/gitlab-ce:latest
 
-# Set a new password for your GitLab CE with Docker panel
-sudo docker exec -it gitlab /bin/bash
+# default password
+sudo docker exec -it gitlab cat etc/gitlab/initial_root_password
 
 # inside the container’s shell, run the following command to reset the root user’s password:
 # gitlab-rake "gitlab:password:reset"

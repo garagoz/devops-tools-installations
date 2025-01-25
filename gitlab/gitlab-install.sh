@@ -13,5 +13,5 @@ curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/scrip
 sudo apt install gitlab-ce -y
 
 sudo vim /etc/gitlab/gitlab.rb
-# search this and change -> "external_url 'https://your_domain'"
+# search this and change to -> "external_url 'https://your_domain'"
 sudo gitlab-ctl reconfigure
