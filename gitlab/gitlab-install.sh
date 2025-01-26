@@ -15,3 +15,6 @@ sudo apt install gitlab-ce -y
 sudo vim /etc/gitlab/gitlab.rb
 # search this and change to -> "external_url 'https://your_domain'"
 sudo gitlab-ctl reconfigure
+
+# default password for first time use
+# /etc/gitlab/initial_root_password
