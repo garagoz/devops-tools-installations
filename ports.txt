@@ -1,0 +1,13 @@
+
+# Ports for AWS Security Group
+SMTP - 25
+SMTPS - 465
+HTTP - 80
+HTTPS - 443
+SSH - 22
+KUBEAPI SERVER - 6443
+NodePort Service - 30000-32767
+CUSTOM TCP - 587
+CUSTOM TCP - 27017
+
+
