@@ -1,0 +1,24 @@
+
+# Implement these tasks 
+
+## Kubernetes Cluster Installation
+1. Hard Way (use Vagrant, one controlplane and one worker node)
+2. Kubeadm
+3. Cops (Cloud)
+4. AWS EKS
+
+
+## Kubernetes Tasks
+1. Helm with Application deploy
+2. Postgres deploying and replication
+3. Mysql deploying and replication
+4. Mongodb deploying and replication
+5. PV and PVC usage using hostPath
+
+
+## Continues Integration and Continues Delivery and Continues Deployment
+1. Jenkins CICD (Sonarqube, Nexus, Slack), Java app, Python app, Nodejs app
+2. Gitlab CICD (Sonarqube, Nexus, Slack), Java app, Python app, Nodejs app
+
+## SSL Certificate creation
+1. OpenSSL
