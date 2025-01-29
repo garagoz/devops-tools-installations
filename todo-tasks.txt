@@ -2,7 +2,7 @@
 # Implement these tasks 
 
 ## Kubernetes Cluster Installation
-1. Hard Way (use Vagrant, one controlplane and one worker node)
+1. Hard Way (use any VM, one controlplane and one worker node)
 2. Kubeadm
 3. Cops (Cloud)
 4. AWS EKS

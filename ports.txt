@@ -5,9 +5,15 @@ SMTPS - 465
 HTTP - 80
 HTTPS - 443
 SSH - 22
-KUBEAPI SERVER - 6443
-NodePort Service - 30000-32767
 CUSTOM TCP - 587
 CUSTOM TCP - 27017
+
+---- KUBERNETES -----
+Api Server - 6443
+Kubelet - 10250
+Etcd - 2379
+Scheduler - 10251
+Controller-Manager - 10252
+NodePort Service - 30000-32767
 
 

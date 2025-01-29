@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KUBERNETES_VERSION = v1.31
+#KUBERNETES_VERSION=v1.31
 
 sudo swapoff -a # To disable swap
 (crontab -l 2>/dev/null; echo "@reboot /sbin/swapoff -a") | crontab - || true
@@ -47,10 +47,10 @@ sudo systemctl restart containerd
 # apt-transport-https may be a dummy package; if so, you can skip that package
 sudo apt-get install -y apt-transport-https ca-certificates curl gpg
 # Attention: change kubeadm version whatever you want
-curl -fsSL https://pkgs.k8s.io/core:/stable:/$KUBERNETES_VERSION/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/$KUBERNETES_VERSION/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
-sudo apt-get install -y kubelet kubeadm kubectl -y
+sudo apt-get install kubelet kubeadm kubectl -y
 
 
 
@@ -63,12 +63,3 @@ sudo apt-get install -y kubelet kubeadm kubectl -y
 # sudo chown $(id -u):$(id -g) $HOME/.kube/config
 # kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 
-
-
-
-
-# sudo apt-mark unhold kubeadm && sudo apt-get update && sudo apt-get install -y kubeadm='1.32.0-1.1' && sudo apt-mark hold kubeadm
-
-# sudo apt-mark unhold kubelet kubectl && 
-# sudo apt-get update && sudo apt-get install -y kubelet='1.32.0-1.1' kubectl='1.32.0-1.1' && 
-# sudo apt-mark hold kubelet kubectl
