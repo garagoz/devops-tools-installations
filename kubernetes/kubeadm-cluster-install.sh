@@ -1,8 +1,11 @@
 #!/bin/bash
 
-#KUBERNETES_VERSION=v1.31
+KUBERNETES_VERSION="v1.31"
 
-sudo swapoff -a # To disable swap
+# Disable swap
+sudo swapoff -a
+
+# make swapoff permanent
 (crontab -l 2>/dev/null; echo "@reboot /sbin/swapoff -a") | crontab - || true
 
 # By default, Kubernetes uses the Container Runtime Interface (CRI) 
@@ -21,7 +24,6 @@ sudo modprobe br_netfilter
 sysctl net.ipv4.ip_forward
 
 # install containerd
-# Add Docker's official GPG key:
 sudo apt-get update
 sudo apt-get install ca-certificates curl -y
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -44,22 +46,23 @@ sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.t
 sudo systemctl restart containerd
 
 
-# apt-transport-https may be a dummy package; if so, you can skip that package
 sudo apt-get install -y apt-transport-https ca-certificates curl gpg
 # Attention: change kubeadm version whatever you want
-curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+curl -fsSL https://pkgs.k8s.io/core:/stable:/$KUBERNETES_VERSION/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/$KUBERNETES_VERSION/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
 sudo apt-get install kubelet kubeadm kubectl -y
-
 
 
 # ------------------------------------------------------------------
 # Creatng cluster with kubeadm, run this only one machine
 
-# kubeadm init --pod-network-cidr=192.168.0.0/16 --apiserver-advertise-address=192.168.56.101
+# kubeadm init --pod-network-cidr=192.168.0.0/16
+
 # mkdir -p $HOME/.kube
 # sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 # sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+# Install network plugin addon
 # kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 
