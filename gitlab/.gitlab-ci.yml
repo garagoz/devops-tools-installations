@@ -1,0 +1,68 @@
+stages:          # List of stages for jobs, and their order of execution
+  - compile
+  - test
+  - security
+  - build
+  - docker
+  - deploy
+
+compile-job:       # This job runs in the build stage, which runs first.
+  stage: compile
+  script:
+    - echo "Compiling the code..."
+    - mvn compile
+  tags:
+    - my-runner
+
+test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  script:
+    - echo "Running test"
+    - mvn test
+  tags:
+    - my-runner    
+
+trivy_fs_scan:
+  stage: security
+  script:
+    - echo "Security check"
+    - trivy fs --format table -o fs.html .
+  tags:
+    - my-runner 
+
+sonarqube-check:
+  stage: security
+  script:
+  - mvn --batch-mode verify sonar:sonar -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_LOGIN -Dsonar.password=$SONAR_PASSWORD
+
+build-job:      # This job runs in the deploy stage.
+  stage: build  # It only runs when *both* jobs in the test stage complete successfully.
+  script:
+    - echo "Building application..."
+    - mvn package
+  tags:
+    - my-runner
+
+build_and_push:
+  stage: docker
+  script:
+    - echo "Image building and pushing"
+    - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - mvn package
+    - docker build -t atorayew/secretsanta:latest .
+    - docker push atorayew/secretsanta:latest
+  tags:
+    - my-runner
+
+deploy_kubernetes:
+  stage: deploy
+  variables:
+    KUBECONFIG_PATH: /home/ubuntu/.kube/config
+  before_script:
+    - mkdir -p $(dirname "$KUBECONFIG_PATH")
+    - echo "$KUBECONFIG_CONTENT" | base64 -d > "$KUBECONFIG_PATH"
+    - export KUBECONFIG="$KUBECONFIG_PATH"
+  script:
+    - kubectl apply -f deployment-service.yaml
+  tags:
+    - my-runner     
