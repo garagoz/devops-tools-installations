@@ -22,3 +22,6 @@
 
 ## SSL Certificate creation
 1. OpenSSL
+
+## Docker
+1. Provision one stack with docker-compose
