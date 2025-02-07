@@ -30,14 +30,20 @@ sudo apt-get install jenkins -y
 # Docker Pipeline
 # docker-build-step
 
-# --- need for AWS cloud---
+# --- needs for AWS cloud---
 # CloudBees Docker Build and Publish
 # Amazon ECR
 # Pipeline: AWS Steps
 
-# if you work with Gitlab
+# ----- if you work with Gitlab ----
 # GitLab
 # GitLab API
+
+# ---- For Kubernetes -----
+# Kubernetes
+# Kubernetes CLI
+# Kubernetes Client API
+# Kubernetes Credentials
 
 # -------------------------------
 # jenkins go to Tools
