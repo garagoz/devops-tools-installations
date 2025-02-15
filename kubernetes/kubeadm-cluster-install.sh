@@ -1,6 +1,6 @@
 #!/bin/bash
 
-KUBERNETES_VERSION="v1.31"
+KUBERNETES_VERSION=v1.31
 
 # Disable swap
 sudo swapoff -a
