@@ -1,0 +1,3 @@
+EKS installation with kodekloudub
+
+https://github.com/kodekloudhub/certified-kubernetes-administrator-course/tree/master/managed-clusters/eks/console/docs
