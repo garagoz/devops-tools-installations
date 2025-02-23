@@ -8,7 +8,9 @@ Steps to run Github Action Runner
    - unzip
    - jq (this needs for sonar quality gate check)
 
-3. Add these credentials to Github
+3. Run sonarqube with docker
+
+4. Add these credentials to Github
    - SONAR_TOKEN
    - SONAR_HOST_URL
    - DOCKERHUB_USERNAME
