@@ -1,0 +1,16 @@
+Steps to run Github Action Runner
+
+1. Provision one server from AWS EC2 (t3.medium)
+
+2. Install these tools
+   - docker
+   - maven
+   - unzip
+   - jq (this needs for sonar quality gate check)
+
+3. Add these credentials to Github
+   - SONAR_TOKEN
+   - SONAR_HOST_URL
+   - DOCKERHUB_USERNAME
+   - DOCKERHUB_PASS
+   - KUBE_CONFIG (use base64 ~/.kube/config)
