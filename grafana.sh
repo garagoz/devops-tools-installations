@@ -12,3 +12,6 @@ echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stab
 
 sudo apt-get update -y
 sudo apt-get install grafana -y
+
+sudo systemctl start grafana-server
+sudo systemctl status grana-server
