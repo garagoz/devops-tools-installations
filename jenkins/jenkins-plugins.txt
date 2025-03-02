@@ -29,9 +29,11 @@
 # Kubernetes Client API
 # Kubernetes Credentials
 
+# ---- For Nodejs -------
+# NodeJS
+
 # -------------------------------
 # jenkins go to Tools
 # add jdk path
 # add maven3
 
-# https://github.com/jaiswaladi246/secretsanta-generator.git
