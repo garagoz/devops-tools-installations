@@ -1,0 +1,37 @@
+
+# ------ Plugins for Java project ------
+
+# Maven integration
+# Github integration
+# Nexus Artifact Uploader
+# Build Timestamp (needs to add timestamp to build artifact)
+# SonarQube Scanner
+# Slack Notification 
+# OWASP Dependency check (Dependency vulnerabilities check)
+# Config File Provider
+# Eclipse Temurin (needs for easy jdk installation)
+# Docker
+# Docker Pipeline
+# docker-build-step
+
+# --- Needs for AWS cloud ---
+# CloudBees Docker Build and Publish
+# Amazon ECR
+# Pipeline: AWS Steps
+
+# ----- if you work with Gitlab ----
+# GitLab
+# GitLab API
+
+# ---- For Kubernetes -----
+# Kubernetes
+# Kubernetes CLI
+# Kubernetes Client API
+# Kubernetes Credentials
+
+# -------------------------------
+# jenkins go to Tools
+# add jdk path
+# add maven3
+
+# https://github.com/jaiswaladi246/secretsanta-generator.git
