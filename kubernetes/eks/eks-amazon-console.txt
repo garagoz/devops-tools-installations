@@ -1,0 +1,33 @@
+--- EKS installation with kodekloudub  -----
+
+https://github.com/kodekloudhub/certified-kubernetes-administrator-course/tree/master/managed-clusters/eks/console/docs
+
+
+--- EKS Installation steps with amazon web console -----
+
+1. Create an Amazon VPC for your EKS cluster using cloudformation
+    Stack name: EksVpcCloudFormation
+    https://s3.us-west-2.amazonaws.com/amazon-eks/cloudformation/2020-10-29/amazon-eks-vpc-private-subnets.yaml
+
+2. Create IAM role in AWS
+   IAM -> Create Role -> AWS Service -> EKS Cluster -> Give a name to role
+
+3. Create EKS Cluster -> Give a name EKS-Cluster
+
+4. Cluster endpoint access -> Public and Private
+
+5. Run a one ec2 client machine for eks usage
+   a. install kubectl
+   b. install awscli
+
+6. aws configure with your user credentials
+
+7. aws eks update-kubeconfig --name EKS-Cluster --region us-east-1
+
+8. Create IAM role for EKS Worker nodes (usecase EC2) -> give a name EKSWorkerNodeRole
+   a. AmazonEKSWorkerNodePolicy
+   b. AmazonEKS_CNI_Policy
+   c. AmazonEC2ContainerRegistryReadOnly
+
+9. EKS Cluster -> Create WorkerNode -> Give a name EksNodeGroup
+
