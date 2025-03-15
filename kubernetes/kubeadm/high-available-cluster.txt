@@ -1,0 +1,4 @@
+1. Launch 6 ec2 instances on AWS
+   3 master Node
+   2 worker Node
+   1 ha-proxy load balancer for master nodes
