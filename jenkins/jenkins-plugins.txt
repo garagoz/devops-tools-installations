@@ -17,7 +17,6 @@
 # CloudBees Docker Build and Publish
 
 # --- Needs for AWS cloud ---
-# CloudBees Docker Build and Publish
 # Amazon ECR
 # Pipeline: AWS Steps
 
