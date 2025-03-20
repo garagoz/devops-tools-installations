@@ -11,9 +11,11 @@ sudo systemctl start opensearch
 
 # For testing
 # curl -X GET https://localhost:9200 -u 'admin:<custom-admin-password>' --insecure
+# curl -k -u admin:Opensearch123! https://44.200.60.162:9200/kubernetes-events-*/_count --insecure
+# curl -k -u admin:Opensearch123! https://44.200.60.162:9200/_cat/indices --insecure
 
 # open this and edit
-# sudo vi /etc/opensearch/opensearch.yml
+# sudo vim /etc/opensearch/opensearch.yml
 # edit this network.host: localhost > network.host: 0.0.0.0
 
 sudo systemctl restart opensearch

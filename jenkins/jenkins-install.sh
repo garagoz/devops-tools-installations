@@ -1,9 +1,9 @@
 #!/bin/bash
 sudo apt update -y
-sudo apt install fontconfig openjdk-17-jre -y
+#sudo apt install fontconfig openjdk-17-jre -y
 
 # also install maven 
-sudo apt install maven -y
+#sudo apt install maven -y
 
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key

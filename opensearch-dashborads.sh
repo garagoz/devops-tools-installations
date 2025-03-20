@@ -7,7 +7,7 @@ sudo apt-get install opensearch-dashboards
 sudo systemctl enable opensearch-dashboards
 sudo systemctl start opensearch-dashboards
 
-# sudo vi /etc/opensearch-dashboards/opensearch_dashboards.yml
+# sudo vim /etc/opensearch-dashboards/opensearch_dashboards.yml
 # Use 0.0.0.0 to bind to any available interface.
 # server.host: 0.0.0.0
 

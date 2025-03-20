@@ -11,8 +11,10 @@
 # Config File Provider
 # Eclipse Temurin (needs for easy jdk installation)
 # Docker
+# Docker commons
 # Docker Pipeline
 # docker-build-step
+# CloudBees Docker Build and Publish
 
 # --- Needs for AWS cloud ---
 # CloudBees Docker Build and Publish
