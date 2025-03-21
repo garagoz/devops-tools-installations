@@ -31,10 +31,10 @@
 # Kubernetes Credentials
 
 # ---- For Nodejs -------
-# NodeJS
+# NodeJS Plugin
 
 # -------------------------------
-# jenkins go to Tools
-# add jdk path
+# Add tools to Jenkins
+# add jdk7 (Eclipse Temurin)
 # add maven3
 
