@@ -1,4 +1,0 @@
-Jenkins node server installation for builds
-
-1. Create a ec2 instance or any virtual machine
-2. 
