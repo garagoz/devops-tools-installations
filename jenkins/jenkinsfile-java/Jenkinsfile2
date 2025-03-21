@@ -20,7 +20,7 @@ pipeline {
         
         stage('Compile') {
             steps {
-                sh 'mvn compile'
+                sh 'mvn clean compile -DskipTests=true'
             }
         }
         
@@ -51,7 +51,7 @@ pipeline {
         
         stage('Build Application') {
             steps {
-                sh 'mvn package'
+                sh 'mvn clean package -DskipTests=true'
             }
         }
         
