@@ -2,6 +2,8 @@
 
 https://github.com/kodekloudhub/certified-kubernetes-administrator-course/tree/master/managed-clusters/eks/console/docs
 
+aws eks update-kubeconfig --region us-east-1 --name demo-eks
+
 
 --- EKS Installation steps with amazon web console -----
 
