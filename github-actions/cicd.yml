@@ -54,7 +54,7 @@ jobs:
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}    
 
     - name: Set up QEMU
-      uses: docker/setup-qemu-action@v3
+      uses: docker/setup-qemu-action@v3 # builds Docker images, especially for multi-platform images (like linux/amd64, linux/arm64, etc.),
 
     - name: Build Docker Buildx
       uses: docker/setup-buildx-action@v3
