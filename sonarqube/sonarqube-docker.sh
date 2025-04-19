@@ -21,5 +21,7 @@ sudo service docker restart
 sudo chmod 666 /var/run/docker.sock
 sudo systemctl restart docker
 
+
+
 # run sonarqube with docker
 docker run --name sonarqube -p 9000:9000 -d sonarqube:lts-community
