@@ -25,10 +25,10 @@ Oracle                          1521
 
 ---- KUBERNETES -----
 Api Server:                     6443
-Kubelet:                        10250
+Kubelet API:                        10250
 Etcd:                           2379-2380
 Kube scheduler:                 10259
-Kube Controller-Manager:        10252
+Kube Controller-Manager:        10257
 NodePort Service:               30000-32767
 Weave Net (CNI)                 6783
 Calico BGP                      179
