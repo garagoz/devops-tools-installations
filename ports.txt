@@ -1,23 +1,37 @@
 
 # Ports for AWS Security Group
-SMTP:               25
-SMTPS:              465
-HTTP:               80
-HTTPS:              443
-SSH:                22
-Grafana:            3000
-Promethues:         9090
-Node-Exporter:      9091
-Jenkins:            8080
-CUSTOM TCP:         587
-CUSTOM TCP:         27017
+SMTP:                           25
+SMTPS:                          465
+POP3                            110
+HTTP:                           80
+HTTPS:                          443
+DNS                             53
+FTP                             21
+SSH/SFTP:                       22
+Grafana/React:                  3000
+Promethues:                     9090
+Node-Exporter:                  9091
+Most Apps:                      8080
+Sonarqube                       9000
+CUSTOM TCP:                     587
+Redis                           6379
+Memcached                       11211
+
+MongoDB:                        27017
+Mysql                           3306
+Postgres                        5432
+MS Sql Server                   1433
+Oracle                          1521
 
 ---- KUBERNETES -----
-Api Server:         6443
-Kubelet:            10250
-Etcd:               2379
-Scheduler:          10251
-Controller-Manager: 10252
-NodePort Service:   30000-32767
+Api Server:                     6443
+Kubelet:                        10250
+Etcd:                           2379-2380
+Kube scheduler:                 10259
+Kube Controller-Manager:        10252
+NodePort Service:               30000-32767
+Weave Net (CNI)                 6783
+Calico BGP                      179
+Flannel VXLAN                   8472
 
 
